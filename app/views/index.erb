@@ -1,10 +1,9 @@
+<form method='post' action='articles/:id'>
+<h1>Pick Your Article!</h1>
 
-<h1>Pick Your Article!<h1>
-<%b=0 %>
-<%while @articles.length > b do %>
  <%@articles.each do |x|%>
-    <%="#{b}. #{x.title}"%>
-    <%b+=1%>
-    <%#binding.pry%>
+    <h2><%= x.title%></h2>
+    <br>
  <%end%>
-<%end%>
+
+ </form>
