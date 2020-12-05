@@ -13,14 +13,13 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
-  get '/articles/:id' do
-    @article = Article.find_by(id: params[:id])
-    binding.pry
-    erb :show
-  end
-
   get '/articles/new' do
     erb :new
+  end
+
+  get '/articles/:id' do
+    @article = Article.find_by(id: params[:id])
+    erb :show
   end
 
   post '/articles' do

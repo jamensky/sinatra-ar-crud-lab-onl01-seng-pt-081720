@@ -1,14 +1,14 @@
-<form method='post' action='/articles/:id'>
+<form method='post' action='/articles'>
 <h1>Pick Your Article!</h1>
 
  <%c=1%>
  <%while @articles.length > c do%>
   <%@articles.each do |x|%>
-    <h2><%= x.title%><input id='#{c}' type='radio' name='title'></h2>
+    <h2><%= x.title%><input id="#{c}" type="radio" name="title"></h2>
       <%c+=1%>
     <br>
   <%end%>
  <%end%>
  <br>
- <input type='submit' value='Submit'>
+ <input type="submit" value="Submit">
  </form>
