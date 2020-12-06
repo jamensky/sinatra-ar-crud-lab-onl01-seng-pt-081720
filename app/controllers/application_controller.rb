@@ -9,10 +9,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/articles' do
-    binding.pry
-    @articles = Article.all
-    erb :index
-    #erb :"/articles/#{Article.last.id}"
+    if params.empty?
+      @articles = Article.all
+      erb :index
+    else
+      redirect "/articles/1"
+    end
   end
 
   post '/articles' do
