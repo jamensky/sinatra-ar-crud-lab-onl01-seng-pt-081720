@@ -1,10 +1,12 @@
-<form method='post' action='/articles'>
-<h1>Pick Your Article!</h1>
+<form method='get' action="/articles/<%=1%>}">
+<%binding.pry%>
 
+<h1>Pick Your Article!</h1>
  <%c=1%>
  <%while @articles.length > c do%>
   <%@articles.each do |x|%>
-    <h2><%= x.title%><input id="#{c}" type="radio" name="title"></h2>
+    <h2><%= x.title%></h2>
+    <input type="checkbox" id='<%= x.id%>' name='<%= x.title%>'>
       <%c+=1%>
     <br>
   <%end%>

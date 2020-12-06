@@ -9,9 +9,17 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/articles' do
+    #binding.pry
+    #if params.empty
     @articles = Article.all
     erb :index
   end
+
+  post '/articles' do
+    @article = Article.create(title: params[:title], content: params[:content])
+    redirect "/articles/#{Article.last.id}"
+  end
+
 
   get '/articles/new' do
     erb :new
@@ -22,9 +30,5 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  post '/articles' do
-    @article = Article.new(params[:title], params[:content])
-    redirect '/articles/:id/#{Article.last.id}'
-  end
 
 end
