@@ -9,11 +9,12 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/articles' do
+    #binding.pry
     if params.empty?
       @articles = Article.all
       erb :index
     else
-      redirect to "/articles?:id=#{params.values}"
+      redirect to "/articles?:id=#{params.values[0].to_i}"
     end
   end
 
