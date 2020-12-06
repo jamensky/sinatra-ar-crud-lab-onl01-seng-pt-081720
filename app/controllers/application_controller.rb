@@ -13,7 +13,7 @@ class ApplicationController < Sinatra::Base
       @articles = Article.all
       erb :index
     else
-      redirect "/articles/1"
+      redirect to "/articles?:id=#{params.values}"
     end
   end
 
