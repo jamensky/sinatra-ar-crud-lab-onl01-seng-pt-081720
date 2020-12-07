@@ -15,7 +15,6 @@ class ApplicationController < Sinatra::Base
       erb :index
     else
       redirect to "/articles/:id=#{params.values[0].to_i}"
-      #binding.pry
     end
   end
 
@@ -34,5 +33,13 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
+  get '/articles/:id/edit' do
+    redirect to "/articles/"
+    erb :edit
+  end
+
+  patch '/articles/:id' do
+
+  end
 
 end
