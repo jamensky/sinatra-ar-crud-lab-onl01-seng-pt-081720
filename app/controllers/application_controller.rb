@@ -33,7 +33,6 @@ class ApplicationController < Sinatra::Base
   end
 
   get '/articles/:id/edit' do
-    redirect to "/articles/"
     erb :edit
   end
 
