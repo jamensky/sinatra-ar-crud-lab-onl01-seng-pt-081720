@@ -4,7 +4,7 @@
   <%@articles.each do |x|%>
     <h2><input type="checkbox" id= "<%= x.id %>" name="<%= x.title%>" value="<%= x.id %>"><%= x.title%></h2>
     <%binding.pry%>
-  <%end%>
+    <%end%>
  <br>
  <input type="submit" value="Submit">
 
