@@ -1,7 +1,8 @@
-<form method='post' action='edit'>
+<form method='post' action="/articles">
 <h1>Edit Here</h1>
 <h2><input id="hidden" type="hidden" name="_method" value="PATCH"></h2>
 <h2>Title: </h2><p contenteditable="true"><%=@article.title%></p>
 <h2>Content: </h2><p contenteditable="true"><%=@article.content%></p>
 <input type="submit" value="Submit">
+<%#binding.pry%>
 </form>
